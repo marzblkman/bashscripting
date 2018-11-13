@@ -1,8 +1,26 @@
 #Here we'll set the variable of the filename it'll be saved as
 clear
-sleep 3
+sleep 1
 
 fname=names.dat
+#Here is a menu of choices
+
+echo	"**** List of Menu Choices ****"
+echo
+echo 	"1. Create a record"
+echo	"2. View records"
+echo	"3. Search for records"
+echo 	"4. Delete records that match a pattern"
+echo
+echo -n	"Please make a selection: "
+read choice
+
+
+#Here comes where we input our choices
+
+case $choice in 
+
+	1)
 
 #Here we're going to ask all the questions needed for the pseduo database
 
@@ -30,11 +48,42 @@ echo -n "Whats your zip code: "
 read zip
 echo
 
+
+
+
 #Here we're going to echo out the values of the variables and store and append them in a file"
 
 echo $firstname:$surname:$addy:$city:$state:$zip >> $fname
 
+;;
 #We're going to display a message with the current number of files and list out all the files
+
+
+#Here is where the choices for the second selection is going.
+
+
+	2)
 
 echo "Here are the contents of contacts file below.  There are `cat $fname | wc -l` records in the file"
 cat $fname
+;;
+
+	3)
+
+echo "This will be the code for searching RECK-CORDS!!!"
+
+;;
+
+	4)
+
+echo "Here where you can DELETE reck-cords!!!"
+
+;;
+
+	*)
+
+echo "Everything else"
+
+;;
+
+esac

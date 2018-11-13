@@ -1,0 +1,40 @@
+#Here we'll set the variable of the filename it'll be saved as
+clear
+sleep 3
+
+fname=names.dat
+
+#Here we're going to ask all the questions needed for the pseduo database
+
+echo -n "Whats your first name: "
+read firstname
+echo
+
+echo -n "Whats your surname: "
+read surname
+echo
+
+echo -n "Whats your address number and name: "
+read addy
+echo
+
+echo -n "What city are you in: "
+read city
+echo
+
+echo -n "What state are you in: "
+read state
+echo 
+
+echo -n "Whats your zip code: "
+read zip
+echo
+
+#Here we're going to echo out the values of the variables and store and append them in a file"
+
+echo $firstname:$surname:$addy:$city:$state:$zip >> $fname
+
+#We're going to display a message with the current number of files and list out all the files
+
+echo "Here are the contents of contacts file below.  There are `cat $fname | wc -l` records in the file"
+cat $fname

@@ -63,8 +63,11 @@ echo $firstname:$surname:$addy:$city:$state:$zip >> $fname
 
 
 	2)
+#changing the output of the #of records
 
-echo "Here are the contents of contacts file below.  There are `cat $fname | wc -l` records in the file"
+count=$(cat names.dat |wc -l) 
+echo Here are the contents of contacts file below.  There are $count records in the file
+echo
 cat $fname
 ;;
 
